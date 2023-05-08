@@ -1,0 +1,12 @@
+# action.yml
+name: 'Action For Semantic Release'
+description: 'GitHub Action for Semantic Release'
+author: 'kolvin'
+branding:
+  icon: 'box'
+  color: 'blue'
+inputs: {} # todo
+outputs: {} # todo
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
