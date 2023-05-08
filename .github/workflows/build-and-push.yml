@@ -1,0 +1,14 @@
+name: Docker 🐋
+
+on:
+  release:
+    types: [published]
+
+jobs: 
+  build-and-push:
+    uses: kloud-cnf/workflows/.github/workflows/build-and-push.yaml@v0.2.0
+    secrets:
+      BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
+    with:
+      IMAGE_NAME: semantic-release
+      OWNER: kloud-cnf
