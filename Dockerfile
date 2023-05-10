@@ -10,4 +10,4 @@ COPY package*json ./
 
 RUN npm install
 
-CMD [ "semantic-release" ]
+ENTRYPOINT [ "/bin/sh", "-c" ]
