@@ -1,3 +1,12 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+## Contents
+
+- [0.1.0 (2023-05-08)](#010-2023-05-08)
+    - [Features](#features)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ## [0.1.1](https://github.com/kloud-cnf/semantic-release-action/compare/v0.1.0...v0.1.1) (2023-05-11)
 
 
