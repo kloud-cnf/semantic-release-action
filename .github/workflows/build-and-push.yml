@@ -4,7 +4,7 @@ on:
   release:
     types: [published]
 
-jobs: 
+jobs:
   build-and-push:
     uses: kloud-cnf/workflows/.github/workflows/build-and-push.yaml@v0.2.1
     secrets:
