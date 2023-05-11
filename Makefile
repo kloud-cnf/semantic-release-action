@@ -41,7 +41,7 @@ run: .check-registry-token ## Run image locally
 		-e GITHUB_TOKEN=$(PAT) \
 		-v $(shell pwd)/:/app:rw \
 		-w /app \
-		$(IMAGE_FQDN):$(IMAGE_TAG) "semantic-release --help"
+		$(IMAGE_FQDN):$(IMAGE_TAG) --dry-run --ci false
 
 push: ## Push service image to registry
 	$(info Make: pushing image...)
