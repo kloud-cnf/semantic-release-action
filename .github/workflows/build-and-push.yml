@@ -11,9 +11,9 @@ jobs:
     uses: kloud-cnf/workflows/.github/workflows/build-and-push.yaml@feat/parmaterise-build-secrets
     secrets:
       BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
-    with:
-      IMAGE_NAME: semantic-release
-      OWNER: kloud-cnf
       BUILD_SECRETS: |
         GPG_PASSPHRASE=${{ secrets.GPG_PASSPHRASE }}
         "GPG_PRIVATE_KEY=${{ secrets.GPG_PRIVATE_KEY }}"
+    with:
+      IMAGE_NAME: semantic-release
+      OWNER: kloud-cnf
