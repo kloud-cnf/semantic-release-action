@@ -12,8 +12,8 @@ jobs:
     secrets:
       BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
       BUILD_SECRETS: |
-        GPG_PASSPHRASE=${{ secrets.GPG_PASSPHRASE }}
-        "GPG_PRIVATE_KEY=${{ secrets.GPG_PRIVATE_KEY }}"
+        GPG_PASSPHRASE=${{ secrets.BOT_GPG_PASSPHRASE }}
+        "GPG_PRIVATE_KEY=${{ secrets.BOT_GPG_PRIVATE_KEY }}"
     with:
       IMAGE_NAME: semantic-release
       OWNER: kloud-cnf
