@@ -23,9 +23,11 @@ ENV GIT_COMMITTER_EMAIL=kloud-cnf@kolv.in
 
 # Define build argument for GPG key ID
 ARG GPG_KEYID=8221ADD2CDA3B07677598258EA5F753D53E1017D
-RUN git config --global user.signingkey $GPG_KEYID && \
-    git config --global commit.gpgsign true && \
-    git config --global tag.gpgsign true && \
-    git config --global push.gpgsign true
+RUN git config --global user.signingKey $GPG_KEYID && \
+    git config --global gpg.program gpg2 && \
+    git config --global gpg.verify.signatures true && \
+    git config --global commit.gpgSign true && \
+    git config --global tag.gpgSign true && \
+    git config --global push.gpgSign true
 
 CMD [ "semantic-release" ]
