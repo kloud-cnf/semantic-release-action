@@ -1,5 +1,10 @@
-# Created by https://www.toptal.com/developers/gitignore/api/macos,node
-# Edit at https://www.toptal.com/developers/gitignore?templates=macos,node
+# Created by https://www.toptal.com/developers/gitignore/api/macos,node,gpg
+# Edit at https://www.toptal.com/developers/gitignore?templates=macos,node,gpg
+
+### GPG ###
+secring.*
+*.gpg
+
 
 ### macOS ###
 # General
@@ -174,4 +179,4 @@ dist
 # SvelteKit build / generate output
 .svelte-kit
 
-# End of https://www.toptal.com/developers/gitignore/api/macos,node
+# End of https://www.toptal.com/developers/gitignore/api/macos,node,gpg

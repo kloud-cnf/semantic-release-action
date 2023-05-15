@@ -1,5 +1,7 @@
 ## [0.1.3](https://github.com/kloud-cnf/semantic-release-action/compare/v0.1.2...v0.1.3) (2023-05-16)
 
+- [0.1.0 (2023-05-08)](#010-2023-05-08)
+    - [Features](#features)
 
 ### Bug Fixes
 
