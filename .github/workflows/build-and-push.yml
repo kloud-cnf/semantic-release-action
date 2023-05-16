@@ -8,12 +8,9 @@ on:
 
 jobs:
   build-and-push:
-    uses: kloud-cnf/workflows/.github/workflows/build-and-push.yaml@feat/parmaterise-build-secrets
+    uses: kloud-cnf/workflows/.github/workflows/build-and-push.yaml@v0.2.1
     secrets:
       BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
-      BUILD_SECRETS: |
-        GPG_PASSPHRASE=${{ secrets.BOT_GPG_PASSPHRASE }}
-        "GPG_PRIVATE_KEY=${{ secrets.BOT_GPG_PRIVATE_KEY }}"
     with:
       IMAGE_NAME: semantic-release
       OWNER: kloud-cnf

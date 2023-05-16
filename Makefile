@@ -4,22 +4,12 @@ DOCKER_OWNER ?= kloud-cnf
 DOCKER_IMAGE_NAME := semantic-release
 IMAGE_FQDN := $(DOCKER_REGISTRY_DOMAIN)/$(DOCKER_OWNER)/$(DOCKER_IMAGE_NAME)
 IMAGE_TAG ?= latest
-LOCAL_GPG_KEY_FILEPATH ?= $(shell pwd)/secret-key.gpg
-LOCAL_GPG_PASSPHRASE_FILEPATH ?= $(shell pwd)/passphrase.gpg
 
 .check-registry-user: ## Validate input value for registry user
 	@test $${DOCKER_REGISTRY_USER?Please set environment variable DOCKER_REGISTRY_USER}
 
 .check-registry-token: ## Validate input value for access token
 	@test $${PAT?Please set environment variable PAT}
-
-.write-gpg-private-key: ## Export private key file to mount as secret
-	$(info Make: exporting private key...)
-	gpg --armor --export-secret-key kloud-cnf@kolv.in > $(LOCAL_GPG_KEY_FILEPATH)
-
-.write-gpg-passphrase: ## write gpg passphrase to file to mount as secret
-	$(info Make: fetching passphrase from vault...)
-	op item get "kloud-cnf gpg passphrase" --fields credential > $(LOCAL_GPG_PASSPHRASE_FILEPATH)
 
 help:
 	@printf "Usage: make [target] \nTargets:\n"
@@ -37,19 +27,16 @@ validate: ## Validate files with pre-commit hooks
 
 clean: ## Clean build files
 	$(info Make: housekeeping 🧹...)
-	rm -rf $(LOCAL_GPG_KEY_FILEPATH) $(LOCAL_GPG_PASSPHRASE_FILEPATH)
 
 prune: ## Clean docker files
 	$(info Make: running docker prune...)
 	@docker system prune --volumes --force
 
-build: .write-gpg-passphrase .write-gpg-private-key ## Build service image
+build: ## Build service image
 	$(info Make: building image...)
 	@DOCKER_BUILDKIT=1 docker build . -t $(IMAGE_FQDN):$(IMAGE_TAG) \
 		--platform linux/amd64 \
-		--platform linux/arm64 \
-		--secret id=GPG_PRIVATE_KEY,src=$(LOCAL_GPG_KEY_FILEPATH) \
-		--secret id=GPG_PASSPHRASE,src=$(LOCAL_GPG_PASSPHRASE_FILEPATH)
+		--platform linux/arm64
 	@make -s clean
 
 run: .check-registry-token ## Run image locally
@@ -58,7 +45,7 @@ run: .check-registry-token ## Run image locally
 		-e GITHUB_TOKEN=$(PAT) \
 		-v $(shell pwd)/:/app:rw \
 		-w /app \
-		$(IMAGE_FQDN):$(IMAGE_TAG) semantic-release --dry-run
+		$(IMAGE_FQDN):$(IMAGE_TAG) "semantic-release --dry-run"
 
 push: ## Push service image to registry
 	$(info Make: pushing image...)

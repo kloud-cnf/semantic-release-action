@@ -1,3 +1,18 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+## Contents
+
+  - [0.1.3 (2023-05-16)](#013-2023-05-16)
+    - [Bug Fixes](#bug-fixes)
+  - [0.1.2 (2023-05-16)](#012-2023-05-16)
+    - [Bug Fixes](#bug-fixes-1)
+  - [0.1.1 (2023-05-11)](#011-2023-05-11)
+    - [Bug Fixes](#bug-fixes-2)
+- [0.1.0 (2023-05-08)](#010-2023-05-08)
+    - [Features](#features)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ## [0.1.3](https://github.com/kloud-cnf/semantic-release-action/compare/v0.1.2...v0.1.3) (2023-05-16)
 
 - [0.1.0 (2023-05-08)](#010-2023-05-08)

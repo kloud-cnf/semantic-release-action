@@ -9,7 +9,6 @@
 - [Outputs](#outputs)
 - [Usage](#usage)
   - [Github Action](#github-action)
-  - [CI Image](#ci-image)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -51,8 +50,8 @@ uses: kloud-cnf/semantic-release-action@v0.1.0
 ```
 
 ---
-
-## CI Image
+<!-- TODO -->
+<!-- ## CI Image
 ```yaml
 name: Release
 
@@ -67,16 +66,5 @@ jobs:
       contents: write
       issues: write
       pull-requests: write
-    container:
-      image: ghcr.io/kloud-cnf/semantic-release:0.1.0
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    steps:
-      - name: Checkout files
-        uses: actions/checkout@v3
-      - name: Configure safe git # -> https://github.com/actions/runner/issues/2033
-        run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
-      - name: Release
-        id: release
-        run: semantic-release
-```
+
+``` -->
