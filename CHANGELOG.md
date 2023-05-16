@@ -1,3 +1,10 @@
+## [0.1.3](https://github.com/kloud-cnf/semantic-release-action/compare/v0.1.2...v0.1.3) (2023-05-16)
+
+
+### Bug Fixes
+
+* **build:** add gpg to env ([aa41c0f](https://github.com/kloud-cnf/semantic-release-action/commit/aa41c0fb61a4db6a8f6b5acdcafc7d99fb5888d9))
+
 ## [0.1.2](https://github.com/kloud-cnf/semantic-release-action/compare/v0.1.1...v0.1.2) (2023-05-16)
 
 
