@@ -1,3 +1,10 @@
+## [0.1.2](https://github.com/kloud-cnf/semantic-release-action/compare/v0.1.1...v0.1.2) (2023-05-16)
+
+
+### Bug Fixes
+
+* **build:** switch from entrypoint -> cmd ([3aedc81](https://github.com/kloud-cnf/semantic-release-action/commit/3aedc810be26887aa8d3bd21b348cc92a8af164f))
+
 ## [0.1.1](https://github.com/kloud-cnf/semantic-release-action/compare/v0.1.0...v0.1.1) (2023-05-11)
 
 
