@@ -6,7 +6,7 @@ on:
 
 jobs: 
   build-and-push:
-    uses: kloud-cnf/workflows/.github/workflows/build-and-push.yaml@v0.3.0
+    uses: kloud-cnf/workflows/.github/workflows/build-and-push.yaml@v0.3.7
     secrets:
       BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
     with:
